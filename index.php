@@ -38,6 +38,10 @@
             </td>
         </tr>
     </table>
+
+    <button name="Submit" value="Submit">
+        Submit
+    </button>
 </form>
 
 </html>
