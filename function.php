@@ -1,4 +1,5 @@
 <?php
+// KONEKSI DATABASE
 $dbConn = mysqli_connect('localhost', 'cal', '300800');
 
 if (!$dbConn) {
@@ -6,3 +7,5 @@ if (!$dbConn) {
 }
 
 echo "Berhasil Terkoneksi ke Database localhost";
+
+// FUNCTION
