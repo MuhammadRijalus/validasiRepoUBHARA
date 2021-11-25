@@ -8,7 +8,7 @@ if (isset($_POST["cek"])) {
     if ($userInput == $angkaRandom) {
         header("Location: web-form-validasi/");
     } else {
-        $pesan = "Selamat Benar!";
+        $pesan = "Lebokno seng bener ndul!!!";
     }
 }
 
@@ -45,7 +45,7 @@ $_SESSION["kode"] = rand(00000, 99999);
                             $huruf = str_split($_SESSION["kode"]);
                             for ($i = 0; $i < count($huruf); $i++) {
                                 $rotate = rand(-40, 40);
-                                echo "<span style = \"position: relative; transform: rotate(" . $rotate . "deg); display: inline-block;\">" . $huruf[$i] . "</span>";
+                                echo "<span style = \"position: relative; transform: rotate(" . $rotate . "deg); display: inline-block; font-size: 20px;\">" . $huruf[$i] . "</span>";
                             }
                             ?>
                         </div>
