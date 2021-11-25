@@ -1,13 +1,14 @@
 <?php
 session_start();
-
-$angkaRandom = $_SESSION["kode"] . "";
 if (isset($_POST["cek"])) {
+    $angkaRandom = $_SESSION["kode"] . "";
     $userInput = $_POST["input-kode"];
 
     if ($userInput == $angkaRandom) {
-        header("Location: web-form-validasi/");
+        $_SESSION["captcha"] = true;
+        header("Location: ../");
     } else {
+        $_SESSION["captcha"] = False;
         $pesan = "Lebokno seng bener ndul!!!";
     }
 }

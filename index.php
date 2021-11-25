@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION["captcha"]) == False) {
+    header("Location: captcha/");
+}
+?>
+
 <html>
 <form action="proses-validasi.php" method="post">
     <table border="0">
