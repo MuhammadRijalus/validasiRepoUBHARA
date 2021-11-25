@@ -6,9 +6,12 @@ if (isset($_POST["cek"])) {
     $userInput = $_POST["input-kode"];
 
     if ($userInput == $angkaRandom) {
+        header("Location: web-form-validasi/");
+    } else {
         $pesan = "Selamat Benar!";
     }
 }
+
 $_SESSION["kode"] = rand(00000, 99999);
 
 ?>
