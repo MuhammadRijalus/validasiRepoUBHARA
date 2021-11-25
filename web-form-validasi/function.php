@@ -1,6 +1,11 @@
 <?php
 // KONEKSI DATABASE
-$dbConn = mysqli_connect('localhost', 'cal', '300800');
+$dbConn = mysqli_connect(
+    'localhost',
+    'cal',
+    '300800',
+    'test'
+);
 
 if (!$dbConn) {
     die("Koneksi Gagal : " . mysqli_connect_error());
