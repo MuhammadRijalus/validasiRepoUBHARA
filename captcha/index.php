@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (isset($_SESSION["captcha"])) {
+    header("Location: ../");
+    exit;
+}
+
 if (isset($_POST["cek"])) {
     $angkaRandom = $_SESSION["kode"] . "";
     $userInput = $_POST["input-kode"];

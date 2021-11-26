@@ -1,5 +1,5 @@
 <?php
-require "connect.php";
+require "function.php";
 
 $nama = $_POST["nama"];
 $nim = $_POST["nim"];

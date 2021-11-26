@@ -1,9 +1,19 @@
 <?php
 session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
+require 'function.php';
 
 if (isset($_SESSION["captcha"]) == False) {
     header("Location: captcha/");
+    exit;
 }
+
+
+
 ?>
 
 <html>
@@ -34,15 +44,6 @@ if (isset($_SESSION["captcha"]) == False) {
             <td> : </td>
             <td>
                 <input type="text" name="tmp-lahir" id="tmp-lahir">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="tgl-lahir">Tanggal Lahir</label>
-            </td>
-            <td> : </td>
-            <td>
-                <input type="date" name="tgl-lahir" id="tgl-lahir">
             </td>
         </tr>
     </table>
