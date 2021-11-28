@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["captcha"])) {
-    header("Location: ../");
+    header("Location: ../validasi.php");
     exit;
 }
 
@@ -11,10 +11,10 @@ if (isset($_POST["cek"])) {
     $userInput = $_POST["input-kode"];
 
     if ($userInput == $angkaRandom) {
-        $_SESSION["captcha"] = true;
-        header("Location: ../");
+        $_SESSION["captcha"] = 1;
+        header("Location: ../validasi.php");
     } else {
-        $_SESSION["captcha"] = False;
+        $_SESSION["captcha"] = 0;
         $pesan = "Lebokno seng bener ndul!!!";
     }
 }

@@ -14,7 +14,9 @@ if (!$dbConn) {
 // echo "Berhasil Terkoneksi ke Database localhost";
 
 // FUNCTION
-function showTable($query) {
+// Show All Tables
+function showTable($query)
+{
     global $dbConn;
 
     $result = mysqli_query($dbConn, $query);
@@ -24,4 +26,17 @@ function showTable($query) {
     }
 
     return $rows;
+}
+
+
+// Show Rows
+function dataMHS($table, $col, $value)
+{
+    global $dbConn;
+
+    $query = "SELECT * FROM $table WHERE `$col` = '$value'";
+    $run_query = mysqli_query($dbConn, $query);
+    $show = mysqli_fetch_assoc($run_query);
+
+    return $show;
 }

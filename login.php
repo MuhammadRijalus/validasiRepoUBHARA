@@ -3,13 +3,13 @@ session_start();
 require 'function.php';
 
 if (isset($_SESSION["login"])) {
-    header("Location: ./");
+    header("Location: ./validasi.php");
 }
 
 if (isset($_POST["submit"])) {
     $username = mysqli_real_escape_string($dbConn, strtolower($_POST["username"]));
     $passwd = $_POST['passwd'];
-    $result = mysqli_query($dbConn, "SELECT * FROM user_mhs WHERE username = 'rijalus'");
+    $result = mysqli_query($dbConn, "SELECT * FROM user_mhs WHERE username = '$username'");
     $account = mysqli_fetch_assoc($result);
 
     // echo $account["username"];
@@ -17,6 +17,7 @@ if (isset($_POST["submit"])) {
     if ($username == $account["username"]) {
         if ($passwd == $account["passwd"]) {
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $username;
 
             header("Location: captcha/");
             exit;
