@@ -7,7 +7,7 @@ $tgl_lahir = $_POST["tgl-lahir"];
 $data_mhs = dataMHS("data_mhs", "nama-panggilan", $_SESSION["username"]);
 // echo $data_mhs["nama"]; 
 
-// TAMBAH PERSON
+// CEK VALIDASI USER
 if ($tgl_lahir == $data_mhs["tgl-lahir"]) {
     $_SESSION["validasi"] = 1;
     header("Location: ./");
