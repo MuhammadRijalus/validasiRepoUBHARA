@@ -53,6 +53,8 @@ if (isset($_SESSION["validasi"]) === 0) {
             </tr>
         </table>
     </form>
+
+    <a href="logout.php">Log Out</a>
 </body>
 
 </html>

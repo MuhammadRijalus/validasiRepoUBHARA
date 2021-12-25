@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo $_SESSION["kode"];
 
 if (isset($_SESSION["captcha"])) {
     header("Location: ../validasi.php");
@@ -12,7 +13,7 @@ if (isset($_POST["cek"])) {
 
     if ($userInput == $angkaRandom) {
         $_SESSION["captcha"] = 1;
-        header("Location: ../validasi.php");
+        
     } else {
         $_SESSION["captcha"] = 0;
         $pesan = "Lebokno seng bener ndul!!!";
